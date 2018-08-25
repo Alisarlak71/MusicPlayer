@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="music_player_test2.UserControl.Search_music"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1200">
+
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="MytransparentBackground" Color="Black" Opacity="0.5"/>
+        <Style x:Key="FileItemStyle" TargetType="{x:Type ListViewItem}">
+            <Setter Property="Margin" Value="5,5,5,5"/>
+            <!--The Setter elements are used to set specific properties for the target controls-->
+            <Setter Property="Padding" Value="0,0,0,0"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate  TargetType="{x:Type ListViewItem}">
+                        <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <materialDesign:Card Background="Black" BorderThickness="5" Width="300" Height="300">
+                                <ContentPresenter/>
+                            </materialDesign:Card>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="1" Name="listview" Margin="20" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+              ItemContainerStyle="{StaticResource FileItemStyle}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel>
+                        <materialDesign:Card  Content="{Binding Name}"/>
+                    </DockPanel>
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</UserControl>

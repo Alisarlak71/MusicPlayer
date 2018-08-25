@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="music_player_test2.UserControl.Themes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                     xmlns:Converters="http://metro.mahapps.com/winfx/xaml/shared"
+                     xmlns:metro="clr-namespace:MahApps.Metro;assembly=MahApps.Metro"
+                     xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+
+
+
+             mc:Ignorable="d" 
+              d:DesignHeight="800" d:DesignWidth="1200">
+    <Grid>
+        <Button Content="dark" Width="200" Height="50" HorizontalAlignment="Left" Click="Button_Click_1" ></Button>
+        <Button Content="light" Width="200" Height="50" HorizontalAlignment="Right" Click="Button_Click_1" ></Button>
+
+        <ComboBox x:Name="AccentSelector" Width="700"
+                              Margin="0,210,2.4,84.8"
+                              VerticalAlignment="Center"
+                              SelectionChanged="AccentSelector_SelectionChanged"
+                              ItemsSource="{x:Static metro:ThemeManager.Accents}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+
+        <ComboBox x:Name="ColorsSelector" Width="700"
+                              Margin="249,240,251,532"
+                              VerticalAlignment="Center"
+                              SelectionChanged="ColorsSelector_SelectionChanged"
+                              ItemsSource="{Binding Colors}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Key}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+
+
+    </Grid>
+</UserControl>
