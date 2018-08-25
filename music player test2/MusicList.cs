@@ -21,6 +21,7 @@ namespace music_player_test2
         public int music_id;
         public int singer_id;
         public int typ_id;
+        public int test;
 
 
 
