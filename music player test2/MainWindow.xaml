@@ -28,6 +28,8 @@ xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                     <ControlTemplate TargetType="{x:Type TreeViewItem}">
                         <Grid>
                             <Grid.ColumnDefinitions>
+                                
+                                
                                 <ColumnDefinition />
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
